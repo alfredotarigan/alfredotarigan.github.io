@@ -1,0 +1,40 @@
+body {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    color: rgb(87, 87, 87);
+    background: #faf9f5;
+
+}
+.container {
+    padding-top:50px;
+}
+h5{
+    font-size: 1.8rem;
+}
+
+h5 a {
+    font-size: 1.8rem;
+    color: rgb(87, 87, 87);
+}
+h5 a:hover{
+    color:blue;
+}
+.content .title-content {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.content .body-content h5{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.content .body-content .content-subjudul{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.content .body-content .date{
+    font-weight: bold;
+
+}

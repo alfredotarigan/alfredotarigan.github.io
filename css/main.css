@@ -1,0 +1,31 @@
+body {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    color: rgb(87, 87, 87);
+    background: #faf9f5;
+
+}
+
+h5{
+    font-size: 1.8rem;
+}
+.container .image {
+    padding-top: 10px;
+}
+p{
+}
+.container .welcome {
+    padding-top: 25px;
+}
+
+.container .social a {
+    font-size: 1.5rem;
+    color: rgb(87, 87, 87);
+}.container .social a:hover {
+    font-size: 1.5rem;
+    color: aqua;
+}
+.konten-blog p {
+    font-size : 1.5rem;
+}
