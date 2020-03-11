@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/materialize.min.css">
+    <title>Install Elementary OS</title>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="content col s12">
+                <h5><u><a href="../../index.html">Back</a></u></h5>
+                <h1 class="title-content">Sharing Data</h1>
+                <div class="body-content ">
+                    <p>
+                        Sharing berasal dari kata share yang artinya berbagi atau saling menukar sesuatu, sharing
+                        diartikan dengan berbagi cerita atau saling memberikan sesuatu sedangkan sharing dalam
+                        pengertian
+                        jaringan artinya saling berbagi data antara beberapa komputer yang saling terhubung satu sama
+                        lain
+                        melalui jaringan sehingga komputer yang satu dapat mengakses dan menggunakan sumber daya yang
+                        terdapat
+                        pada komputer tersebut. <br>
+                        Pada kesempatan kali ini, kita akan mensharing data menggunakan <b>Virtual Box</b> dengan
+                        menggunakan
+                        sistem operasi <b>Linux</b> sebagai server nya dan <b>Windows</b> sebagai client nya.
+                        Distro linux yang dipakai adalah <b>Ubuntu Server 18.04</b> dan Windows yang dipakai adalah
+                        <b>Windows 7</b>. Kita juga akan memakai <b>Filezilla</b> sebagai mengupload atau mengambil data
+                        dari
+                        komputer server yang telah kita buat, dan kita juga memakai <b>PuTTY</b> sebagai emulator
+                        terminal SSH.
+                        <br>
+
+                        <h5>Preresquite</h5>
+                        <a href="https://ubuntu.com/download/server">Ubuntu Server 18.04</a>
+                        <br>
+                        <a href="https://www.microsoft.com/en-us/software-download/windows7">Windows 7</a>
+                        <br>
+                        <a href="https://filezilla-project.org/download.php?type=client">Filezilla</a>
+                        <br>
+                        <a href="https://www.putty.org/">PuTTY</a>
+                        <br>
+                    </p>
+                    <br>
+                    <h5>Install Ubuntu Server</h5>
+                    <p class="content-subjudul">1. Membuat Virtual Machine</p>
+                    <p>
+                        Install <b>Virtual Box</b> yang sudah di download, lalu klik install dan tunggu sampai proses
+                        installasi selesai. Setelah proses installasi selesai, maka buat <i>Virtual Machine</i> baru
+                        dengan cara
+                        memilih tombol yang di sudut kiri atas yang bertuliskan <b>New</b>. Lalu tuliskan nama sistem
+                        operasi nya serta tipe dan versi nya.
+                        Kalian bisa mengikuti gambar di bawah ini.
+                        <br>
+                        <img src="img/ubuntu1.png" class="materialboxed center-align" alt="" width="300px">
+                    </p>
+                    <p class="content-subjudul">2. Tahap Pemilihan Memory dan Hardisk</p>
+                    <p>
+                        Pada tahap ini, kalian bisa memilih alokasi memory pada <b>Virtual Machine</b> untuk sistem
+                        operasi
+                        <b>Ubuntu Server</b> kalian bisa mengikuti sesuai rekomendasi <b>Virtual Box</b> atau kalian
+                        bisa
+                        mengalokasikan nya sesuai keinginan kalian. Begitu juga dengan alokasian hardisk, kalian bisa
+                        mengikuti
+                        <b>Virtual Box</b> atau kalian bisa mengalokasikan nya sendiri. Saya memilih untuk mengikuti
+                        saran dari
+                        <b>Virtual Box</b>. Setelah itu pilih create untuk melanjutkan proses nya. <br>
+                        <img src="img/ubuntu2.png" alt="">
+                        <br>
+                    </p>
+                    <br>
+                    <p class="content-subjudul">3. Pemilihan Penyimpanan Hardisk</p>
+                    <p>
+                        Pada tahap ini kalian akan memilih tipe dari hardisk yang akan di install <b>Ubuntu Server</b>,
+                        ada 3 pilihan untuk
+                        tipe hardisk nya.
+                        <ul class="collection">
+                            <li class="collection-item">VDI (Virtual Disk Image)</li>
+                            <li class="collection-item">VHD (Virtual Hard Disk)</li>
+                            <li class="collection-item">VMDK (Virtual Machine Disk)</li>
+                        </ul>
+                        Pilih VDI(Virtual Disk Image) lalu masuk ke tahap selanjutnya pilih Storage Hardisk
+                        <b>Dynamically Allocated</b> Setelah itu masuk ke tahap selanjutnya, dan akan muncul pemilihan
+                        size dari hardisk yang digunakan untuk menginstall <b>Ubuntu Server</b> pilih saja yang di
+                        rekomendasikan, atau kalian
+                        bisa membuat sesuai dengan selera kalian. Setelah itu pilih create maka Virtual Machine akan di
+                        buat. <br>
+                        <img src="img/ubuntu3.png" alt="">
+                    </p>
+                    <p class="content-subjudul">4. Pemilihan ISO <b>Ubuntu Server</b></p>
+                    <p>
+                        Setelah <b>Virtual Machine</b> sudah dibuat, maka tahap selanjutnya pemilihan ISO dari sistem
+                        operasi yang akan di install. Klik nama <b>Virtual Machine</b> nya yaitu Ubuntu Server lalu
+                        pilih settings
+                        yang berada di atas. Lalu akan muncul beberapa menu, pilih bagian menu Storage, lalu klik icon
+                        CD yang bertuliskan <b>Empty</b>
+                        Lalu klik icon CD yang berada di tulisan Optical Drive dan pilih <b>Choose Virtual Optical Disk
+                            File</b>
+                        Pilih ISO dari <b>Ubuntu Server</b> yang sudah di unduh, lalu klik OK.
+                        <br>
+                        <img src="img/ubuntu4.png" alt="">
+                    </p>
+                    <p class="content-subjudul">5 Start Virtual Machine</b></p>
+                    <p>
+                        Setelah melakukan start pada Virtual Box maka tunggu proses booting nya, setelah proses booting
+                        selesai
+                        Ubuntu Server akan meminta kita untuk memilih bahasa yang digunakan. Pada tahap ini kita gunakan
+                        bahasa inggris
+                        dikarenakan bahasa indonesia belum didukung. Selanjutnya tekan enter pada keyboard, maka masuk
+                        ke tahap selanjutnya.
+                        <br>
+                        <img src="img/ubuntu5.PNG" alt="">
+                    </p>
+                    <p class="content-subjudul">5.1 Install Ubuntu Server</b></p>
+                    <p>
+                        Pada menu ini, tekan enter pada keyboard untuk masuk ke tahap selanjutnya, pada tahap ini kita
+                        mengkonfirmasi
+                        kalau keyboard yang kita gunakan berlayout English US.
+                        <br>
+                        <img src="img/ubuntu6.PNG" width="500px">
+                        <br>
+                        Selanjutnya masuk ke pilihan network, disini kita pilih default saja tidak usah diubah, karena
+                        server
+                        yang dibuat kali ini hanya simulasi saja.<br>
+                        <img src="img/ubuntu7.PNG" width="500px">
+                        <br>
+                        Pada tahap selanjutnya kita masuk ke tahap pemilihan proxy server, kalau kalian mempunyai proxy
+                        server
+                        bisa di tulis, tetapi pada tahap ini kita tidak menggunakan proxy server. Kita hanya menggunakan
+                        default dari
+                        Ubuntu nya saja. Kalau sudah tekan enter pada tahap selanjutnya.
+                        <br>
+                        <img src="img/ubuntu8.PNG" width="500px">
+                        <br>
+                        Pada tahap selanjutnya kita memilih mirror address untuk package Ubuntu Server,disini kita
+                        menggunakan
+                        mirror default dari Ubuntu berikan, selanjutnya tekan enter pada keyboard dan masuk ke tahap
+                        selanjutnya.
+                        <br>
+                        <img src="img/ubuntu9.PNG" width="500px">
+                        <br>
+                        Pada tahap ini kita akan menginstall Ubuntu Server, pilih entire disk yang artinya kita akan
+                        memformat dan menggunakan
+                        seluruh hardisk Virtual Box untuk menginstall Ubuntu Server. Setelah itu tekan enter pada
+                        keyboard dan masuk ke tahap selanjutnya.
+                        <br>
+                        <img src="img/ubuntu10.PNG" width="500px">
+                        <br>
+                        Pada tahap ini kita memasukkan username dan nama server kita, silahkkan masukkan nama server
+                        kalian serta
+                        password pada server kalian. Setelah selesai maka tekan enter untuk masuk ke tahap selanjutnya.
+                        <br>
+                        <img src="img/ubuntu11.PNG" width="500px">
+                        <br>
+                        Pada tahap ini kita diminta untuk menginstall <b>Open SSH</b>, tidak usah di centang terlebih
+                        dahulu, nanti di install
+                        pada tahap selesai membuat server. Setelah itu klik enter dan masuk ke tahap selanjutnya.
+                        <br>
+                        <img src="img/ubuntu12.PNG" width="500px">
+                        Pada tahap ini kita akan diminta untuk menginstall paket tambahan, tekan saja enter, pada
+                        keyboard untuk masuk ke tahap selanjutnya
+                        di tahap ini kita tidak menginstall paket tambahan yang disediakan oleh Ubuntu Server.
+                        <br>
+                        <img src="img/ubuntu13.PNG" width="500px">
+                        Setelah itu tunggu proses install sampai selesai, mungkin membutuhkan waktu beberapa menit
+                        tergantung dari speed internet kalian masing masing, dikarenakan Ubuntu Server akan meminta
+                        update package.
+                        <br>
+                        <img src="img/ubuntu14.PNG" width="500px">
+                    </p>
+                    <br><br>
+
+                    <h5>Install Windows</h5>
+                    <p class="content-subjudul">1. Membuat Virtual Machine</p>
+                    <p>Sama seperti cara menginstall Ubuntu Server tadi, di buat dulu <b>Virtual Machine </b>
+                        beri nama virtual machine nya <b>Windows 7 </b> setelah itu klik next untuk masuk ke tahap
+                        selanjutnya</p>
+                    <img src="img/windows71.PNG" width="500px">
+                    <br>
+                    <p class="content-subjudul">2. Tahap Pemilihan Memory dan Hardisk</p>
+                    <p>Pada tahap ini, kita harus memilih memory untuk sistem operasi yang kita buat,pilih saja
+                        nilai default nya
+                        seperti tahap menginstall <b>Ubuntu Server</b> setelah itu masuk ke tahap selanjutnya.
+                    </p>
+                    <img src="img/windows72.PNG" width="500px">
+                    <br>
+                    <p class="content-subjudul">3. Tahap Alokasi Penyimpanan</p>
+                    <p>Pada tahap ini kita memilih alokasi untuk penyimpanan kita, silahkan ikut nilai default nya,
+                        kalau mau mengubah nya juga tidak apa apa, alokasikan berdasarkan penyimpanan hardisk kalian
+                        masing masing.
+                    </p>
+                    <img src="img/windows73.PNG" width="500px">
+                    <br>
+                    <p class="content-subjudul">4. Tahap Pemilihan CD Windows 7</p>
+                    <p>
+                        Sama seperti tahap sebelumnya, masuk ke dalam setting virtual machine lalu pilih ISO <b>Windows
+                            7</b> yang sudah
+                        kalian download. Setelah itu pilih ISO nya dan silahkan booting <b>Virtual Machine</b> nya.
+                    </p>
+                    <img src="img/windows74.PNG" width="500px">
+                    <br>
+                    <p class="content-subjudul">5. Tahap Pemilihan Installasi Windows 7</p>
+                    <p>
+                        Pada tahap ini silahkan klik tombol next, dan masuk ke tahap selanjutnya untuk penginstallan
+                        Windows 7.
+                        Untuk time and currency format dan keyboard, biarkan saja default dari sistem nya jangan diubah.
+                    </p>
+                    <img src="img/windows75.PNG" width="500px">
+                    <br>
+                    <p class="content-subjudul">6. Tahap Pemilihan Installasi Windows 7</p>
+                    <p>
+                        Pada tahap ini silahkan klik tombol next, dan masuk ke tahap selanjutnya untuk penginstallan
+                        Windows 7.
+                        Untuk time and currency format dan keyboard, biarkan saja default dari sistem nya jangan diubah.
+                    </p>
+                    <img src="img/windows75.PNG" width="500px">
+                    <br>
+                    <p class="content-subjudul">7. Tahap Pemilihan Penyimpanan</p>
+                    <p>
+                        Pada tahap ini silahkan pilih penyimpanan virtual box yang sudah kalian buat, kalau sudah klik
+                        tombol next
+                        pada tahap installasi tersebut.
+                    </p>
+                    <img src="img/windows76.PNG" width="500px">
+                    <br>
+                    <p class="content-subjudul">8. Proses Install</p>
+                    <p>
+                        Pada tahap ini Windows 7 lagi menginstall di dalam penyimpanan virtual, tunggu sampai proses
+                        installasi selesai.
+                        Kalau sudah silahkan jalankan kembali virtual machine nya.
+                    </p>
+                    <img src="img/windows77.PNG" width="500px">
+                    <br>
+                    <p class="content-subjudul">9. Selesai</p>
+                    <p>
+                        Install Windows 7 sudah selesai, saatnya kita masuk ke pengaturan sharing data. Jangan lupa di
+                        download file yang sudah diperlukan
+                        dan di install.
+                    </p>
+                    <img src="img/windows78.PNG" width="500px">
+                    <br>
+                    <p class="date">Selasa 10 Maret, 2020</p>
+                    <br>
+                    <h5>Setting Sharing Data</h5>
+                    <p class="content-subjudul">1. Setting Network</p>
+                    <p>
+                        Pada tahap ini klik virtual machine kalian, lalu masuk ke menu network dan setting seperti di
+                        gambar bawah ini. Setting juga windows kalian seperti gambar di bawah ini.
+
+                    </p>
+                    <img src="img/setting1.PNG" width="500px">
+                    <br>
+                    <p class="content-subjudul">2. Start Virtual Machine</p>
+                    <p>
+                        Jalankan virtual machine kalian, Windows dan Ubuntu, sekaligus dua, setelah di jalankan coba cek
+                        IP masing masing
+                        dari windows dan ubuntu kalian
+                        <br>
+                        <b>Windows</b>:
+                        ipconfig
+                        <br>
+                        <b>Ubuntu</b>:
+                        ifconfig
+
+                    </p>
+                    <img src="img/setting2.PNG" width="1000px">
+                    <br>
+                    <p class="content-subjudul">3. Install Open SSH di linux</p>
+                    <p>
+                        Tulis di terminal linux kalian, <b>sudo apt install openssh-server</b> untuk menginstall SSH
+                        pada server kalian, agar bisa
+                        dipakai oleh PuTTY.
+                    </p>
+                    <img src="img/setting3.PNG" width="500px">
+                    <br>
+                    <p class="content-subjudul">4. SSH menggunakan Windows</p>
+                    <p>
+                        Setelah menginstall SSH pada linux kalian masing masing, selanjutnya masuk ke windows
+                        dan jalankan PuTTY yang sudah di install. Pada Host Name, masukkan IP dari linxu kalian, dan
+                        port nya biarkan saja 22 jangan diubah.
+                        Setelah itu jalankan dan SSH meminta konfirmasi, tekan saja yes dan SSH akan meminta username
+                        dan password dari linux kalian.
+                        Masukkan username dan password linux kalian, dan tampilan nya seperti ini. Jika tampilan seperti
+                        gambar dibawah ini
+                        maka Linux sudah siap untuk mensharing data dengan windows kalian.
+
+                    </p>
+                    <img src="img/setting4.PNG" width="500px">
+                    <br>
+                    <p class="content-subjudul">5. Filezilla Windows</p>
+                    <p>
+                        Setelah menginstall filezilla, selanjutnya buka filezilla kalian masing masing, isikan host
+                        dengan IP linux kalian
+                        username dengan username linux kalian dan password dengan password linux kalian masing masing,
+                        dan port nya isi dengan 22. Drag file yang ingin kalian sharing ke filezilla dan pastikan
+                        letakkan di folder
+                        Home. Kalau berhasil maka data yang di drag akan masuk seperti gambar di bawah ini
+                    </p>
+                    <img src="img/setting5.PNG" width="800px">
+                    <br>
+                    <p class="date">Rabu 11 Maret, 2020</p>
+
+                </div>
+            </div>
+        </div>
+</body>
+<script src="../../js/materialize.min.js"></script>
+
+</html>
